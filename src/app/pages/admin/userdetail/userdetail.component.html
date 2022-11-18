@@ -1,0 +1,30 @@
+<mat-card>
+    <h1 class="text-center">User Details</h1>
+    <mat-card-content>
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>Email</td>
+                <td>First Name</td>
+                <td>Last name</td>
+                <td>Phone</td>
+                <td>Action</td>
+            </tr>
+            <tr *ngFor='let u of users,'>
+                <td>{{u.id}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.firstName}}</td>
+                <td>{{u.lastName}}</td>
+                <td>{{u.phone}}</td>
+                <td><button [routerLink]="'/admin/result/'+u.id" mat-raised-button color="primary">View</button></td>
+            </tr>
+           
+        </table>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button [routerLink]="'/admin/rank'" mat-raised-button color="primary">View Rank</button>
+    </mat-card-actions>
+</mat-card>
+
+<!-- {{users|json}}
+{{users[0].id}} -->

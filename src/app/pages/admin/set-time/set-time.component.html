@@ -1,0 +1,17 @@
+ <mat-card>
+    <mat-card-content>
+        <form  class="mt20">
+            <mat-form-field class="w100">
+                <mat-label>Set Time</mat-label>
+                <input required [(ngModel)]="timer.timer" name='timer' type="text"  matInput/>
+              </mat-form-field>
+
+            
+
+         <div class="container text-center">
+             <button (click)="setTimer()" mat-raised-button color="accent">Set Time</button>
+         </div>
+        </form>
+    </mat-card-content>
+    <!-- {{timer}} -->
+ </mat-card>

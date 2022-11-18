@@ -1,0 +1,39 @@
+
+<!-- {{results|json}} -->
+
+<div class="bootstrap-wrapper text-center">
+    <div class="container-fluid">
+        <div class="row mt20">
+            <div class="col-md-6 offset-md-3">
+
+                <mat-card>
+                    
+                    <mat-card-header>
+                        <mat-card-actions>
+                            <h2>Rank Board Of <b style="color:blue">{{question}}</b> Question</h2>
+                            <button (click)="getRankOfFirstQuestion()" mat-raised-button color="accent">1</button>
+                            <button (click)="getRankOfSecondQuestion()" mat-raised-button color="accent">2</button>
+                            <button (click)="getRank()" mat-raised-button color="accent">3</button>
+                            <button (click)="getRank()" mat-raised-button color="accent">All</button>
+                        </mat-card-actions>
+                    </mat-card-header>
+                    <mat-card-content class="text-center">
+                        <table class="ml36">
+                            <tr>
+                                <td><b>Rank</b></td>
+                                <td><b>Name</b></td>
+                                <td><b>Total Time taken</b></td>
+                            </tr>
+                            <tr *ngFor='let r of results,let i=index'>
+                                <td>{{i+1}}</td>
+                                <td>{{r.firsName}}</td>
+                                <td>{{r.timeTakenByUser}} Seconds</td>
+                            </tr>
+                           
+                        </table>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

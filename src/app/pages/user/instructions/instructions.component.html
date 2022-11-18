@@ -1,0 +1,70 @@
+<div class="bootstrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <mat-card>
+                    <mat-card-header>
+                          <mat-card-title>
+                              Read the instruction of this carefully
+                          </mat-card-title>
+                          <mat-card-subtitle>
+                              One step more to go
+                          </mat-card-subtitle>
+                    </mat-card-header>
+
+                    <mat-card-content class="ml20">
+                           <h1>{{quiz.title}}</h1>
+                           <p>{{quiz.description}}</p>
+
+                           <mat-divider></mat-divider>
+                           <br/>    
+                           <h1>Important Instructions</h1>
+                           <ul>
+                               <li>This quiz is only for practice purpose</li>
+                               <!--let the time of each question is 2 minutes-->
+                               <li>You have to submit within . <b>{{quiz.numberOfQuestions*2}}</b> Minutes</li>
+                               <li>You can attempts any number of time</li>
+                               <li>There are <b>{{quiz.numberOfQuestions}}</b> questions in this quiz</li>
+                               <li>Each questions carries <b>{{quiz.maxMarks/quiz.numberOfQuestions}}</b> marks. No negative marking for wrong one</li>
+                               <li>All questions are MCQ Type</li>
+                            </ul>
+                            <mat-divider>
+
+                            </mat-divider>
+
+                            <br/>
+                            <h1>Attempting Quiz</h1>
+                            <ul>
+                                <li>Click <b>Start Quiz</b>button to start the Quiz</li>
+                                <li>The timer will start the moment you click the start button</li>
+                                <li>You can not resume the quiz if you interupted due to any reason</li>
+                                <li>Scroll down to move to next question.</li>
+                                <li>Click on Submit Quiz button on completeion of the quiz</li>
+                                <li>Report of the test is automatically generated in the form of PDF copy</li>
+                            </ul> 
+                    </mat-card-content>
+                    
+                    <mat-card-actions class="text-center">
+                           <button (click)="startQuiz()" mat-raised-button color="primary">Start Quiz</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <div class="col md-2">
+                    <!--Progress-->
+                    <mat-card>
+                        <mat-card-header>
+                            <mat-card-title>Progress</mat-card-title>
+                            <mat-card-subtitle>
+                                Quiz will automatically submitted to when timer reaches to <b>0:0</b>
+                            </mat-card-subtitle>   
+                            
+                        </mat-card-header>
+                      <mat-card-content style='margin-top: 70px;'>
+                       <h1 class="text-center">{{getFormatedtime()}}</h1>
+                       <mat-spinner [value]="(timer/(10 * 2 * 60))*100" mode="determinate" color="accent" style="margin: auto;"></mat-spinner>
+                       </mat-card-content>
+                    </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

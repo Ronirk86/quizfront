@@ -1,0 +1,33 @@
+<mat-card>
+    <h1 class="text-center">Results Of User</h1>
+    <mat-card-content>
+        <div class="bootsrap-wrapper">
+            <div class="container text-center">
+                
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                       <!--table details-->
+                       
+                       <table>
+                        <tr>
+                            <td>Marks Got</td>
+                            <td>Correct Answer</td>
+                            <td>Attempted Questions</td>
+                
+                        </tr>
+                        <tr>
+                            <td>{{quizResult.marksGot}}</td>
+                            <td>{{quizResult.correctAnswer}}</td>
+                            <td>{{quizResult.attempted}}</td>
+                        </tr>
+                       
+                    </table>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<!-- {{quizResult|json}} -->
